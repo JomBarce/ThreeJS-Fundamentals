@@ -111,8 +111,8 @@ function animate() {
 		obj.rotation.x += 0.01;
 		obj.rotation.y += 0.01;
 	});
-
-    midLine.rotation.x -= 0.008;
+	
+	midLine.rotation.x -= 0.008;
 	midLine.rotation.y -= 0.008;
 
 	outerLine.rotation.x -= 0.004;
@@ -132,14 +132,14 @@ function animate() {
 }
 
 // Resizing renderer
-function resizeRendererToDisplaySize(renderer) {
-	const canvas = renderer.domElement;
+function resizeRendererToDisplaySize(resizeRen) {
+	const canvas = resizeRen.domElement;
 	const pixelRatio = window.devicePixelRatio;
 	const width  = Math.floor( canvas.clientWidth  * pixelRatio );
 	const height = Math.floor( canvas.clientHeight * pixelRatio );
 	const needResize = canvas.width !== width || canvas.height !== height;
 	if (needResize) {
-		renderer.setSize(width, height, false);
+		resizeRen.setSize(width, height, false);
 	}
 	return needResize;
 }
